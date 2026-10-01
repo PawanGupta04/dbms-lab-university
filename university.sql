@@ -1,4 +1,12 @@
-creating database 
+--Agar repo pehle se hi bana hai toh delete karo bencho
+
+
+DROP DATABASE IF EXISTS university;
+CREATE DATABASE university;
+USE university;
+
+--Nahi toh yeh use karo
+--creating database 
 
   
 CREATE DATABASE university;
