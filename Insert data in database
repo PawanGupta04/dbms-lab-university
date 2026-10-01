@@ -1,0 +1,68 @@
+INSERT INTO department VALUES
+(1, 'C.S.E', 'CS006', 2558777),
+(2, 'E.C.E', 'EC004', 2558776);
+
+INSERT INTO professor VALUES
+('CS001','Dr.Biplab Sarkar','Male',1982,1,'9434122345'),
+('CS002','Dr.Souvik Bhattacharya','Male',2000,1,'9345134677'),
+('CS003','Mr.Sanjoy Pratihar','Male',2003,1,'9332657342'),
+('CS004','Mrs.Kasturi Dikpati','Female',2003,1,'9414321908'),
+('CS005','Mr.Biswanath Pal','Male',2004,1,'9454123876'),
+('EC001','Dr.B.C.Sarkar','Male',1986,2,'9456128867'),
+('EC002','Mrs.Smita Hazra','Female',2002,2,'9465123417'),
+('EC003','Mr.Somnath pal','Male',2005,2,'9435129078'),
+('CS006','Mr.Sripati Mukherjee','Male',1977,1,'9435675489'),
+('EC004','Mr.Bivas Paramanik','Male',2002,2,'9453215789');
+
+INSERT INTO course VALUES
+('UCS001','UG(CSE)',2,1),
+('PCS001','PG(CSE)',4,1),
+('UEC001','UG(ECE)',2,2),
+('PEC001','PG(ECE)',4,2);
+
+INSERT INTO student VALUES
+(1,'Parag Roy','B.E',3,'Male',1,'CS005'),
+(2,'Rituparna Kashyap','B.E',3,'Male',1,'CS005'),
+(3,'Neha','B.E',3,'Female',1,'CS005'),
+(4,'Raman','B.E',4,'Male',2,'EC004'),
+(5,'Surja Sanyal','M.E',2,'Male',1,'CS005'),
+(6,'Susahant Satyam','M.E',1,'Male',2,'EC004'),
+(7,'Kamalika Samanta','M.E',1,'Female',1,'CS005'),
+(8,'Aparajita','B.E',2,'Female',2,'EC004'),
+(9,'Sirajul Islam','M.E',2,'Male',2,'EC004'),
+(10,'Manisha Chaudhury','M.E',2,'Female',2,'EC004');
+
+INSERT INTO enrollment VALUES
+(1,'UCS001',6,3,'A'),
+(2,'UCS001',6,3,'B'),
+(3,'UCS001',6,3,'A+'),
+(4,'UEC001',8,4,'A'),
+(5,'PCS001',4,2,'A+'),
+(6,'PEC001',2,1,'A+'),
+(7,'PCS001',2,1,'A++'),
+(8,'UEC001',4,2,'B++'),
+(9,'PEC001',4,2,'A'),
+(10,'PEC001',4,2,'B++');
+
+INSERT INTO teaching VALUES
+('CS001','PCS001',2,1,'PC-1'),
+('CS001','PCS001',4,2,'PC-2'),
+('CS002','PCS001',2,1,'PC-1'),
+('CS003','UCS001',6,3,'UC-1'),
+('CS004','UCS001',6,3,'UC-1'),
+('CS005','PCS001',2,1,'PC-1'),
+('CS005','UCS001',6,3,'UC-1'),
+('EC001','UEC001',4,2,'UE-1'),
+('EC002','UEC001',4,2,'UE-1'),
+('EC003','PEC001',4,2,'PE-1'),
+('EC003','UEC001',6,3,'UE-1');
+
+INSERT INTO prerequisite VALUES
+('H.S','UCS001'),
+('B.E','PCS001'),
+('H.S','UEC001'),
+('B.E','PEC001');
+
+-- Add the circular FKs last
+ALTER TABLE department
+  ADD FOREIGN KEY (hod) REFERENCES professor(empId);
